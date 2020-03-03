@@ -1,22 +1,13 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:shake/shake.dart';
+import 'package:audioplayers/audio_cache.dart';
+import 'ListChoices.dart';
 
 const kBurgany = Color(0xFF4D0403);
 const kNavyBlue = Color(0xFF182855);
 
 int ballindex = 1;
-
-List<String> choices = [
-  "Sit on face",
-  "Eat pussy",
-  "Suck dick",
-  "Finger",
-  "Make out",
-  "Eat ass",
-  "Kiss neck",
-  "Get it on",
-];
 
 void main() => runApp(
       MaterialApp(home: Scaffoldcode()),
@@ -49,11 +40,16 @@ class Eightball extends StatefulWidget {
 class _EightballState extends State<Eightball> {
   void initState() {
     super.initState();
+    ShakeDetector detector = ShakeDetector.autoStart(onPhoneShake: () {
+      shakeball();
+    });
   }
 
   void shakeball() {
     setState(() {
-      ballindex = Random().nextInt(8);
+      ballindex = Random().nextInt(20);
+      final player = AudioCache();
+      player.play('shakeS.mp3');
     });
   }
 
@@ -63,10 +59,10 @@ class _EightballState extends State<Eightball> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Stack(children: <Widget>[
-          Image.asset("images/ball1.png"),
+          Image.asset("images/ball.png"),
           Positioned(
             bottom: 130,
-            right: 160,
+            right: 165,
             child: Container(
               width: 80.0,
               height: 100.0,
@@ -75,7 +71,7 @@ class _EightballState extends State<Eightball> {
                 style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white),
+                    color: Color(0xFF468ad1)),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -87,9 +83,6 @@ class _EightballState extends State<Eightball> {
         RaisedButton(
           onPressed: () {
             shakeball();
-            ShakeDetector detector = ShakeDetector.autoStart(onPhoneShake: () {
-              shakeball();
-            });
           },
           child: Text(
             "shake me",
@@ -101,13 +94,3 @@ class _EightballState extends State<Eightball> {
     );
   }
 }
-
-//@override
-//void initState() {
-//super.initState();
-//ShakeDetector detector = ShakeDetector.autoStart(onPhoneShake: () {
-//shakeball();
-//});
-//detector.startListening();
-// TODO: fix the shaking BOY!!!
-//}
