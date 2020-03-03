@@ -1,8 +1,8 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/Users/abdullaaljalahma/Developer/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/abdullaaljalahma/Udemy/flutter/magic-8-ball-flutter-master"
-export "FLUTTER_TARGET=/Users/abdullaaljalahma/Udemy/flutter/magic-8-ball-flutter-master/lib/main.dart"
+export "FLUTTER_APPLICATION_PATH=/Users/abdullaaljalahma/Documents/GitHub/flutterPractice/magic-8-ball-flutter-master"
+export "FLUTTER_TARGET=/Users/abdullaaljalahma/Documents/GitHub/flutterPractice/magic-8-ball-flutter-master/lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"
 export "FLUTTER_FRAMEWORK_DIR=/Users/abdullaaljalahma/Developer/flutter/bin/cache/artifacts/engine/ios"
