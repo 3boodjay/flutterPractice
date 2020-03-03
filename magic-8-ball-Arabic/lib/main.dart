@@ -21,7 +21,7 @@ class Scaffoldcode extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: kBurgany,
         title: Text(
-          'shake me down :)',
+          'shake me la',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
@@ -47,7 +47,7 @@ class _EightballState extends State<Eightball> {
 
   void shakeball() {
     setState(() {
-      ballindex = Random().nextInt(20);
+      ballindex = Random().nextInt(7);
       final player = AudioCache();
       player.play('shakeS.mp3');
     });
@@ -69,7 +69,7 @@ class _EightballState extends State<Eightball> {
               child: Text(
                 choices[ballindex],
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF468ad1)),
                 textAlign: TextAlign.center,
